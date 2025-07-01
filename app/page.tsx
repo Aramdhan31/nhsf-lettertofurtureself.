@@ -290,27 +290,27 @@ export default function NHSFLetterTemplate() {
 
   if (showPreview) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-orange-50 to-red-50 p-4">
+      <div className="min-h-screen bg-gradient-to-br from-orange-50 to-red-50 p-2 sm:p-4">
         <div className="max-w-4xl mx-auto">
-          <div className="flex items-center justify-between mb-6">
-            <Button variant="outline" onClick={() => setShowPreview(false)} className="bg-white">
+          <div className="flex flex-col sm:flex-row items-center justify-between mb-4 sm:mb-6 gap-3">
+            <Button variant="outline" onClick={() => setShowPreview(false)} className="bg-white w-full sm:w-auto">
               ← Back to Edit
             </Button>
-            <Button onClick={generatePDF} disabled={!isFormValid()} className="bg-orange-600 hover:bg-orange-700">
+            <Button onClick={generatePDF} disabled={!isFormValid()} className="bg-orange-600 hover:bg-orange-700 w-full sm:w-auto">
               <Download className="w-4 h-4 mr-2" />
               Download PDF
             </Button>
           </div>
 
           <Card className="bg-white shadow-lg">
-            <CardContent className="p-8">
-              <div className="text-center mb-8">
+            <CardContent className="p-4 sm:p-6 lg:p-8">
+              <div className="text-center mb-6 sm:mb-8">
                 {/* Actual NHSF Logo */}
-                <div className="flex justify-center mb-4">
+                <div className="flex justify-center mb-3 sm:mb-4">
                   <img 
                     src="/NHSFLOGO.png" 
                     alt="NHSF Logo" 
-                    className="w-16 h-16 object-contain"
+                    className="w-12 h-12 sm:w-16 sm:h-16 object-contain"
                     onError={(e) => {
                       // Fallback to placeholder if image fails to load
                       const target = e.target as HTMLImageElement;
@@ -320,14 +320,14 @@ export default function NHSFLetterTemplate() {
                     }}
                   />
                   <div 
-                    className="w-16 h-16 bg-orange-800 flex items-center justify-center rounded-md hidden"
+                    className="w-12 h-12 sm:w-16 sm:h-16 bg-orange-800 flex items-center justify-center rounded-md hidden"
                     style={{ backgroundColor: '#8B4513' }}
                   >
-                    <span className="text-white font-bold text-sm">NHSF</span>
+                    <span className="text-white font-bold text-xs sm:text-sm">NHSF</span>
                   </div>
                 </div>
-                <h1 className="text-2xl font-bold text-orange-800 mb-2">National Hindu Student Forum</h1>
-                <h2 className="text-lg text-gray-600">Letter of Reflection & Future Vision</h2>
+                <h1 className="text-xl sm:text-2xl font-bold text-orange-800 mb-2">National Hindu Student Forum</h1>
+                <h2 className="text-base sm:text-lg text-gray-600">Letter of Reflection & Future Vision</h2>
               </div>
 
               <div className="mb-6">
@@ -393,15 +393,15 @@ export default function NHSFLetterTemplate() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-orange-50 to-red-50 p-4">
+    <div className="min-h-screen bg-gradient-to-br from-orange-50 to-red-50 p-2 sm:p-4">
       <div className="max-w-2xl mx-auto">
-        <div className="text-center mb-8">
+        <div className="text-center mb-6 sm:mb-8">
           {/* NHSF Logo */}
-          <div className="flex justify-center mb-4">
+          <div className="flex justify-center mb-3 sm:mb-4">
             <img 
               src="/NHSFLOGO.png" 
               alt="NHSF Logo" 
-              className="w-20 h-20 object-contain"
+              className="w-16 h-16 sm:w-20 sm:h-20 object-contain"
               onError={(e) => {
                 // Fallback to placeholder if image fails to load
                 const target = e.target as HTMLImageElement;
@@ -411,17 +411,17 @@ export default function NHSFLetterTemplate() {
               }}
             />
             <div 
-              className="w-20 h-20 bg-orange-800 flex items-center justify-center rounded-md hidden"
+              className="w-16 h-16 sm:w-20 sm:h-20 bg-orange-800 flex items-center justify-center rounded-md hidden"
               style={{ backgroundColor: '#8B4513' }}
             >
-              <span className="text-white font-bold text-base">NHSF</span>
+              <span className="text-white font-bold text-sm sm:text-base">NHSF</span>
             </div>
           </div>
-          <div className="flex items-center justify-center mb-4">
-            <FileText className="w-8 h-8 text-orange-600 mr-2" />
-            <h1 className="text-3xl font-bold text-orange-800">NHSF Letter Template</h1>
+          <div className="flex flex-col sm:flex-row items-center justify-center mb-3 sm:mb-4 gap-2">
+            <FileText className="w-6 h-6 sm:w-8 sm:h-8 text-orange-600" />
+            <h1 className="text-2xl sm:text-3xl font-bold text-orange-800">NHSF Letter Template</h1>
           </div>
-          <p className="text-gray-600">Create your letter of reflection and future vision</p>
+          <p className="text-sm sm:text-base text-gray-600">Create your letter of reflection and future vision</p>
         </div>
 
         <Card className="bg-white shadow-lg">
@@ -429,8 +429,8 @@ export default function NHSFLetterTemplate() {
             <CardTitle className="text-orange-800">Letter Details</CardTitle>
             <CardDescription>Fill in the template to create your personalized letter</CardDescription>
           </CardHeader>
-          <CardContent className="space-y-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <CardContent className="space-y-4 sm:space-y-6 p-4 sm:p-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
               <div>
                 <Label htmlFor="sender-name">Your Full Name *</Label>
                 <Input
@@ -517,12 +517,12 @@ export default function NHSFLetterTemplate() {
               />
             </div>
 
-            <div className="flex gap-4 pt-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4">
               <Button
                 onClick={() => setShowPreview(true)}
                 disabled={!isFormValid()}
                 variant="outline"
-                className="flex-1"
+                className="flex-1 w-full"
               >
                 <Eye className="w-4 h-4 mr-2" />
                 Preview Letter
@@ -531,7 +531,7 @@ export default function NHSFLetterTemplate() {
               <Button
                 onClick={submitLetter}
                 disabled={!isFormValid()}
-                className="flex-1 bg-green-600 hover:bg-green-700"
+                className="flex-1 w-full bg-green-600 hover:bg-green-700"
               >
                 <Mail className="w-4 h-4 mr-2" />
                 Submit Letter
@@ -540,7 +540,7 @@ export default function NHSFLetterTemplate() {
               <Button
                 onClick={generatePDF}
                 disabled={!isFormValid()}
-                className="flex-1 bg-orange-600 hover:bg-orange-700"
+                className="flex-1 w-full bg-orange-600 hover:bg-orange-700"
               >
                 <Download className="w-4 h-4 mr-2" />
                 Download PDF
@@ -548,7 +548,7 @@ export default function NHSFLetterTemplate() {
             </div>
 
             {!isFormValid() && (
-              <p className="text-sm text-gray-500 text-center">
+              <p className="text-xs sm:text-sm text-gray-500 text-center px-2">
                 * Please fill in all required fields to preview or download your letter
               </p>
             )}

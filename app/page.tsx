@@ -421,7 +421,22 @@ export default function NHSFLetterTemplate() {
             <FileText className="w-6 h-6 sm:w-8 sm:h-8 text-orange-600" />
             <h1 className="text-2xl sm:text-3xl font-bold text-orange-800">NHSF Letter Template</h1>
           </div>
-          <p className="text-sm sm:text-base text-gray-600">Create your letter of reflection and future vision</p>
+          <p className="text-sm sm:text-base text-gray-600 mb-4">Create your letter of reflection and future vision</p>
+          
+          {/* Options explanation */}
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 sm:p-4 text-sm">
+            <h3 className="font-semibold text-blue-800 mb-2">📝 Two ways to use your letter:</h3>
+            <div className="space-y-2 text-blue-700">
+              <div className="flex items-start gap-2">
+                <span className="font-medium">📧 Submit:</span>
+                <span>Share with chapter buddies/matrix for support and accountability</span>
+              </div>
+              <div className="flex items-start gap-2">
+                <span className="font-medium">📄 Download:</span>
+                <span>Keep private for personal reflection and growth</span>
+              </div>
+            </div>
+          </div>
         </div>
 
         <Card className="bg-white shadow-lg">
@@ -517,6 +532,27 @@ export default function NHSFLetterTemplate() {
               />
             </div>
 
+            {/* Action explanation */}
+            <div className="bg-gray-50 border border-gray-200 rounded-lg p-3 sm:p-4 mt-4">
+              <h4 className="font-medium text-gray-800 mb-2">📋 Choose your action:</h4>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm text-gray-600">
+                <div className="flex items-start gap-2">
+                  <Mail className="w-4 h-4 mt-0.5 text-green-600" />
+                  <div>
+                    <span className="font-medium text-green-700">Submit to Chapter:</span>
+                    <p className="text-xs mt-1">Your chapter buddies/matrix will receive your letter to support your journey</p>
+                  </div>
+                </div>
+                <div className="flex items-start gap-2">
+                  <Download className="w-4 h-4 mt-0.5 text-orange-600" />
+                  <div>
+                    <span className="font-medium text-orange-700">Download for Self:</span>
+                    <p className="text-xs mt-1">Keep your reflections private for personal growth and reference</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 pt-4">
               <Button
                 onClick={() => setShowPreview(true)}
@@ -534,7 +570,7 @@ export default function NHSFLetterTemplate() {
                 className="flex-1 w-full bg-green-600 hover:bg-green-700"
               >
                 <Mail className="w-4 h-4 mr-2" />
-                Submit Letter
+                Submit to Chapter
               </Button>
 
               <Button
@@ -543,7 +579,7 @@ export default function NHSFLetterTemplate() {
                 className="flex-1 w-full bg-orange-600 hover:bg-orange-700"
               >
                 <Download className="w-4 h-4 mr-2" />
-                Download PDF
+                Download for Self
               </Button>
             </div>
 
